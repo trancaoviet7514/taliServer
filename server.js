@@ -5,7 +5,7 @@ var socketio = require('socket.io')
 var ip = require('ip');
 var app = http.createServer();					
 var io = socketio(app);								
-app.listen(PORT);										
+app.listen(process.env.PORT || PORT);										
 console.log("Server running...")
  
 function ParseJson(jsondata) {
