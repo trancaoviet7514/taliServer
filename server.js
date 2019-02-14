@@ -5,6 +5,7 @@ var socketio = require('socket.io')
 var ip = require('ip');
 var app = http.createServer(function(req, res) {
     res.write("hello")
+    res.end()
 });					
 var io = socketio(app);
 app.listen(process.env.PORT || PORT);										
