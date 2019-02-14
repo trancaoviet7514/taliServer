@@ -15,7 +15,7 @@ io.on('connection', function(socket) {
     console.log("Connected")
 	
     socket.emit('welcome', {
-        message: 'Connected !!!!'
+        data: 'welcome event'
     })
 	
     socket.on('connection', function(message) {
