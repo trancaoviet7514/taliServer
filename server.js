@@ -4,10 +4,10 @@ var http = require('http')
 var socketio = require('socket.io')				
 var ip = require('ip');
 var app = http.createServer();					
-var io = socketio(app);								
-app.listen(process.env.PORT || PORT, function (req, res) {
-    res.end();
-});										
+var io = socketio(app);
+app.createServer(function(req, res) {
+    res.write("hello")
+}).listen(process.env.PORT || PORT);										
 console.log("Server running...")
  
 io.on('connection', function(socket) {	
