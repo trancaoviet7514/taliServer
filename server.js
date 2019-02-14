@@ -3,11 +3,11 @@ const PORT = 3484;
 var http = require('http') 							
 var socketio = require('socket.io')				
 var ip = require('ip');
-var app = http.createServer();					
-var io = socketio(app);
-app.createServer(function(req, res) {
+var app = http.createServer(function(req, res) {
     res.write("hello")
-}).listen(process.env.PORT || PORT);										
+});					
+var io = socketio(app);
+app.listen(process.env.PORT || PORT);										
 console.log("Server running...")
  
 io.on('connection', function(socket) {	
